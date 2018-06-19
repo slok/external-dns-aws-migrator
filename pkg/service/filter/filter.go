@@ -7,6 +7,10 @@ import (
 	"github.com/slok/external-dns-aws-adopter/pkg/model"
 )
 
+const (
+	txtEntryFMT = "heritage=external-dns,external-dns/owner=%s"
+)
+
 // EntryValidator will validate an entry.
 type EntryValidator interface {
 	Validate(host string) (*model.Entry, error)
@@ -18,14 +22,14 @@ type validator struct {
 }
 
 // NewEntryValidator returns a new entry validator.
-func NewEntryValidator(filter, txt string) (EntryValidator, error) {
+func NewEntryValidator(filter, ownerID string) (EntryValidator, error) {
 	r, err := regexp.Compile(filter)
 	if err != nil {
 		return nil, err
 	}
 	return &validator{
 		filter: r,
-		txt:    txt,
+		txt:    fmt.Sprintf(txtEntryFMT, ownerID),
 	}, nil
 }
 

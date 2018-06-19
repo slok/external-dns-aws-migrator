@@ -22,17 +22,17 @@ func TestValidate(t *testing.T) {
 		{
 			name:   "A valid hsot with a matching regex should return that is valid",
 			filter: `.*batman\.com$`,
-			txt:    "test txt value",
+			txt:    "test-owner-id",
 			host:   "bruce-wayne.is.batman.com",
 			expEntry: &model.Entry{
 				Host: "bruce-wayne.is.batman.com",
-				TXT:  "test txt value",
+				TXT:  "heritage=external-dns,external-dns/owner=test-owner-id",
 			},
 		},
 		{
 			name:   "A invalid hsot with a matching regex should return that is invalid",
 			filter: `.*batman\.com$`,
-			txt:    "test txt value",
+			txt:    "test-owner-id",
 			host:   "bruce-wayne.is.spiderman.com",
 			expErr: true,
 		},
