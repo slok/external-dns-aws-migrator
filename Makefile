@@ -53,6 +53,7 @@ shell: build
 	$(DOCKER_RUN_CMD) /bin/bash
 
 # Build production stuff.
+.PHONY: build-binary
 build-binary:
 	$(DOCKER_RUN_CMD) /bin/sh -c '$(BUILD_BINARY_CMD)'
 
