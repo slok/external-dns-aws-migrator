@@ -6,7 +6,7 @@ Utility to let [external-dns][external-dns] adopt route53 record sets not manage
 
 Sometimes you add external-dns to your clusters and the new flow doesn't have your old host entries from route53 but you want these entries being tracked and managed by external-dns, to do this you would need to create a txt entry for each one, this tool helps doing this migration all at once, filtered by hosts, with multiple external-dns...
 
-## When I should use this?
+## When should I use this?
 
 You are using Kubernetes, AWS, you already have dns entries in route53 (manually or managed by another tool) and you want to start using external-dns to automate ingress loadbalancer addresses in route53.
 
@@ -19,7 +19,7 @@ Example:
 Get all ingress hosts from a cluster.
 
 ```bash
-kubectl-ares get ingress \
+kubectl get ingress \
     --all-namespaces  \
     -o jsonpath='{.items[*].spec.rules[*].host}' \
     | sed "s/ /\n/g" > /tmp/ingresses.txt
