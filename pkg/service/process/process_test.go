@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/log"
-	madopt "github.com/slok/external-dns-aws-adopter/pkg/mocks/service/adopt"
-	mfilter "github.com/slok/external-dns-aws-adopter/pkg/mocks/service/filter"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/process"
+	"github.com/slok/external-dns-aws-migrator/pkg/log"
+	madopt "github.com/slok/external-dns-aws-migrator/pkg/mocks/service/adopt"
+	mfilter "github.com/slok/external-dns-aws-migrator/pkg/mocks/service/filter"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/process"
 )
 
 func TestAdoptStream(t *testing.T) {

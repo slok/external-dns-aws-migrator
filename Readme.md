@@ -1,6 +1,6 @@
-# external-dns-aws-adopter
+# external-dns-aws-migrator
 
-Utility to let [external-dns][external-dns] adopt route53 record sets not managed by [external-dns][external-dns]
+Utility that helps migrating old (not managed by [external-dns][external-dns]) route53 resource record sets from a hosted zone to being managed by external-dns and let update based on the kubernetes ingress address (set by other ingress controllers)
 
 ## Motivation
 
@@ -12,7 +12,7 @@ You are using Kubernetes, AWS, you already have dns entries in route53 (manually
 
 ## Usage
 
-external-dns-aws-adopter reads hosts from the stdin (one per line) and tries to adopt the entries  so the external-dns starts managing the entries.
+external-dns-aws-migrator reads hosts from the stdin (one per line) and tries to adopt the entries  so the external-dns starts managing the entries.
 
 Example:
 
@@ -28,7 +28,7 @@ kubectl get ingress \
 Now adopt in dry run mode(only print the ones that will be applied) all `slok.xyz` hosts with the external-dns instance identifier `heritage=external-dns,external-dns/owner=slok-xyz`
 
 ```bash
-external-dns-aws-adopter \
+external-dns-aws-migrator \
     -filter ".*\.slok\.xyz$" \
     --txt-owner-id "slok-xyz" \
     --dry-run < /tmp/ingresses.txt 

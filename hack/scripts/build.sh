@@ -6,8 +6,8 @@ set -o nounset
 
 DIR="$( cd "$( dirname "${0}" )" && pwd )"
 ROOT_DIR=${DIR}/../..
-SRC=github.com/slok/external-dns-aws-adopter/cmd/external-dns-aws-adopter
-OUT=${ROOT_DIR}/bin/external-dns-aws-adopter
+SRC=github.com/slok/external-dns-aws-migrator/cmd/external-dns-aws-migrator
+OUT=${ROOT_DIR}/bin/external-dns-aws-migrator
 LDF_CMP="-w -extldflags '-static'"
 
 echo "Building binary at ${OUT}"
