@@ -9,20 +9,22 @@ import (
 
 // Defaults.
 const (
-	defTXTOwnerID = "default"
-	defFilter     = `^.+$`
-	defAWSRegion  = endpoints.EuWest1RegionID
-	defDryRun     = false
-	defDebug      = false
+	defTXTOwnerID  = "default"
+	defFilter      = `^.+$`
+	defAWSRegion   = endpoints.EuWest1RegionID
+	defDryRun      = false
+	defDebug       = false
+	defShowVersion = false
 )
 
 // Flags are the flags of the program.
 type Flags struct {
-	AWSRegion  string
-	Filter     string
-	TXTOwnerID string
-	DryRun     bool
-	Debug      bool
+	AWSRegion   string
+	Filter      string
+	TXTOwnerID  string
+	DryRun      bool
+	Debug       bool
+	ShowVersion bool
 }
 
 // NewFlags returns the flags of the commandline.
@@ -35,6 +37,7 @@ func NewFlags() *Flags {
 	fl.StringVar(&flags.TXTOwnerID, "txt-owner-id", defTXTOwnerID, "the txt owner id that will be set on the txt registry")
 	fl.BoolVar(&flags.DryRun, "dry-run", defDryRun, "run in dry-run mode")
 	fl.BoolVar(&flags.Debug, "debug", defDebug, "run in debug mode")
+	fl.BoolVar(&flags.ShowVersion, "version", defShowVersion, "show version of the app")
 
 	fl.Parse(os.Args[1:])
 

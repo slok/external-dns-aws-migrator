@@ -2,9 +2,23 @@ language: go
 go:
 - '1.10'
 
-# This will allow forks to be build with travis.
 go_import_path: github.com/slok/external-dns-aws-migrator
-
 
 script:
 - make ci
+
+after_success:
+- make ci-release
+
+deploy:
+  provider: releases
+  # Get the key with `travis setup releases`
+  api_key:
+    secure: ql0CtBj55B+JRy1TBQK/7rUFcdCDM2n6yqNVhwwWLa0CuBnrIxWWVosLaQsaWU4qoUKGSyIUF3ltbdSh97fffDe5sPltbUMrCljCKrGdplO9oEKw9R9qAAP1d2S/rN4bhBkispEEzNxJDSTNqGcA6enQxqVx9E3HeNZqFCAZTCYew0Lxl/jynQW3uemotT88baG9UEivpxfCROrlmP13QKAnz6WJwAnWUmGj8E2+FIDm1JgFg+Mh0eDjf0PiufWt8vxqs4reb4WOw1Nvm1adg8BKU6KP3gCDdDu/SFxWoT+SjbUlAml913r99o6GmKLm3BPpNm60IYq3UYuC6DFwvDfz/Y/doEyOxX+QhafNtwWaPjYhIkL8CZ4sxSZd0Zkr7bbI8VN27VfqN41e86eE7zQ9NfUTv9ARSj6co/cd4IQEIdN6Aw3ix0qtlTEn+6/ZWDUT/f2zg6VrUANC9bv7dIVshJHz65XBfENCJ46PkklifdvnUFgHWbyZkVD05bWBmOAT1DM1Hdl+O1DfchLBB3SRWTSSKvyJWlaQT0lEL0UukTxO5f7jcdRyOpGa625k9L7pCMXpdtCKbb5OMWtsvc0ZeWkAZw5HsrZRZ0B3TdbL2ygdWo7oZQMMzp7mcPGeCA024LWa9CppBg2iCMddK3V1Au/viLxg+XVVhOkvRVU=
+  file:
+    - "./bin/external-dns-aws-migrator-darwin-amd64"
+    - "./bin/external-dns-aws-migrator-linux-amd64"
+    - "./bin/external-dns-aws-migrator-windows-amd64.exe"
+  skip_cleanup: true
+  on:
+    tags: true

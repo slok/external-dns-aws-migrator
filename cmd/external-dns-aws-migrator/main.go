@@ -14,6 +14,15 @@ import (
 	"github.com/slok/external-dns-aws-migrator/pkg/service/process"
 )
 
+const (
+	versionFMT = "external-dns-aws-migrator %s\n"
+)
+
+var (
+	// Version is the app version.
+	Version = "dev"
+)
+
 // Main is the Main program.
 type Main struct {
 	flags  *Flags
@@ -22,6 +31,12 @@ type Main struct {
 
 // Main is the main function that will be executed.
 func (m *Main) Main() error {
+
+	if m.flags.ShowVersion {
+		m.printVersion()
+		return nil
+	}
+
 	r53cli := m.createAWSCli(defAWSRegion)
 
 	if m.flags.Debug {
@@ -57,6 +72,11 @@ func (m *Main) createAWSCli(awsRegion string) route53iface.Route53API {
 	cfg.Region = awsRegion
 
 	return route53.New(cfg)
+}
+
+// printVersion prints the version of the app.
+func (m *Main) printVersion() {
+	fmt.Fprintf(os.Stdout, versionFMT, Version)
 }
 
 func main() {
