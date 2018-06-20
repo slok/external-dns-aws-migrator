@@ -1,0 +1,6 @@
+## 0.x.x / 2018-xx-xx
+
+* [FEATURE] Accept stream processing of hosts using stdin.
+* [FEATURE] Allow customizing txt owner id.
+* [FEATURE] Filter by regex the wanted migration hosts.
+* [FEATURE] Migrator of route53 entries to external-dns.
