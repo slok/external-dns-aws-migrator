@@ -1,4 +1,4 @@
-## 0.x.x / 2018-xx-xx
+## 0.1.0 / 2018-06-20
 
 * [FEATURE] Accept stream processing of hosts using stdin.
 * [FEATURE] Allow customizing txt owner id.
