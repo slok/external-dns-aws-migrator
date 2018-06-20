@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"io"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/log"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/adopt"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/filter"
+	"github.com/slok/external-dns-aws-migrator/pkg/log"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/adopt"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/filter"
 )
 
 // StreamAdopter knows how to process a stream.

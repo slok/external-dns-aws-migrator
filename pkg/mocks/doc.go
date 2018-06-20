@@ -1,7 +1,7 @@
 /*
 Package mocks will have all the mocks of the library.
 */
-package mocks // import "github.com/slok/external-dns-aws-adopter/pkg/mocks"
+package mocks // import "github.com/slok/external-dns-aws-migrator/pkg/mocks"
 
 // AWS mocks.
 //go:generate mockery -output ./github.com/aws/aws-sdk-go-v2/service/route53/route53iface -outpkg route53iface -dir ./ -name Route53API

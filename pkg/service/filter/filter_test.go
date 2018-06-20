@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/model"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/filter"
+	"github.com/slok/external-dns-aws-migrator/pkg/model"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/filter"
 )
 
 func TestValidate(t *testing.T) {

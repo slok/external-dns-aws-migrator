@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/model"
+	"github.com/slok/external-dns-aws-migrator/pkg/model"
 )
 
 const (

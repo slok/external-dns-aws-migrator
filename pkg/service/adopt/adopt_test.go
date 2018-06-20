@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/log"
-	mroute53iface "github.com/slok/external-dns-aws-adopter/pkg/mocks/github.com/aws/aws-sdk-go-v2/service/route53/route53iface"
-	"github.com/slok/external-dns-aws-adopter/pkg/model"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/adopt"
+	"github.com/slok/external-dns-aws-migrator/pkg/log"
+	mroute53iface "github.com/slok/external-dns-aws-migrator/pkg/mocks/github.com/aws/aws-sdk-go-v2/service/route53/route53iface"
+	"github.com/slok/external-dns-aws-migrator/pkg/model"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/adopt"
 )
 
 func mockDefaultListHostedZones() route53.ListHostedZonesRequest {

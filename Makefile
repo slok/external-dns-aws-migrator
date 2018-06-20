@@ -1,9 +1,9 @@
 
 # Name of this service/application
-SERVICE_NAME := external-dns-aws-adopter
+SERVICE_NAME := external-dns-aws-migrator
 
 # Path of the go service inside docker
-DOCKER_GO_SERVICE_PATH := /go/src/github.com/slok/external-dns-aws-adopter
+DOCKER_GO_SERVICE_PATH := /go/src/github.com/slok/external-dns-aws-migrator
 
 # Shell to use for running scripts
 SHELL := $(shell which bash)

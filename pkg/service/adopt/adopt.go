@@ -8,8 +8,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/route53"
 	"github.com/aws/aws-sdk-go-v2/service/route53/route53iface"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/log"
-	"github.com/slok/external-dns-aws-adopter/pkg/model"
+	"github.com/slok/external-dns-aws-migrator/pkg/log"
+	"github.com/slok/external-dns-aws-migrator/pkg/model"
 )
 
 // RSAdopter is the Route53 AWS record set adopter, it will get a txt Entry and it will addopt the entry in the required route53 hosted zone.

@@ -17,4 +17,4 @@ RUN addgroup -g $gid app && \
 
 
 USER app
-WORKDIR /go/src/github.com/slok/external-dns-aws-adopter
+WORKDIR /go/src/github.com/slok/external-dns-aws-migrator

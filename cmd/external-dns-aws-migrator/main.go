@@ -8,10 +8,10 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/route53"
 	"github.com/aws/aws-sdk-go-v2/service/route53/route53iface"
 
-	"github.com/slok/external-dns-aws-adopter/pkg/log"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/adopt"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/filter"
-	"github.com/slok/external-dns-aws-adopter/pkg/service/process"
+	"github.com/slok/external-dns-aws-migrator/pkg/log"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/adopt"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/filter"
+	"github.com/slok/external-dns-aws-migrator/pkg/service/process"
 )
 
 // Main is the Main program.
