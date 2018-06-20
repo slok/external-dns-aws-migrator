@@ -2,5 +2,9 @@ language: go
 go:
 - '1.10'
 
+# This will allow forks to be build with travis.
+go_import_path: github.com/slok/external-dns-aws-migrator
+
+
 script:
 - make ci
