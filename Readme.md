@@ -25,7 +25,7 @@ kubectl get ingress \
     | sed "s/ /\n/g" > /tmp/ingresses.txt
 ```
 
-Now adopt in dry run mode(only print the ones that will be applied) all `slok.xyz` hosts with the external-dns instance identifier `heritage=external-dns,external-dns/owner=slok-xyz`
+Now adopt in dry run mode(only print the ones that will be applied) all `slok.xyz` hosts with the external-dns instance identifier `slok-xyz`:
 
 ```bash
 external-dns-aws-migrator \
